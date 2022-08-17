@@ -9,8 +9,7 @@ router.post('/', async (req, res) => {
     where: { email: req.body.email },
   });
 
-  if (
-    !user ||
+  if (!user ||
     !(await bcrypt.compare(req.body.password, user.passwordDigest))
   ) {
     res.status(404).json({
