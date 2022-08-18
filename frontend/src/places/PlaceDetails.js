@@ -55,6 +55,7 @@ function PlaceDetails() {
       `http://localhost:5000/places/${place.placeId}/comments`,
       {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },
